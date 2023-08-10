@@ -43,6 +43,7 @@ h3 {
 }
 h1 {
   font-size: 80px;
+  line-height: 1;
 }
 h2 {
   color: black;
@@ -57,8 +58,10 @@ h3 {
   text-align: center;
 }
 .temperatureUnits {
-  font-size: 15px;
+  font-size: 16px;
   color: #857e67;
+  position: relative;
+  top: -40px;
 }
 .card-body-days {
   text-align: center;
