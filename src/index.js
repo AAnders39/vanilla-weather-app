@@ -59,6 +59,7 @@ function getCurrentLocation(event) {
 //
 function displayWeatherConditions(response) {
   document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#country").innerHTML = response.data.sys.country;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -68,9 +69,17 @@ function displayWeatherConditions(response) {
   document.querySelector("#minTemp").innerHTML = Math.round(
     response.data.main.temp_min
   );
-  console.log(response.data);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+
+  console.log(response.data);
+
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
+  document.querySelector("#sunset").innerHTML = response.data.sys.sunset;
 }
 
 function citySearch(event) {

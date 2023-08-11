@@ -50,27 +50,26 @@
             <hr> 
               <div class="clearfix">    
                 <h1 class="currentTemp">
-                  <span id="temperature">☀️65</span><span class="temperatureUnits">
+                  <span>☀️</span><span id="temperature">65</span><span class="temperatureUnits">
                     <a href= "#" id="celsius-link">°C </a> ⎹ 
                     <a href= "#" id="fahrenheit-link"> °F </a>
                   </span>
                 </h1>
                 </div>  
                 <h2> 
-                  <span id="description"> cloudy</span> <br>
+                  <span id="description"> Cloudy</span> <br>
                   <span id="maxTemp">High</span>°/
                   <span id="minTemp">Low</span>°
                 </h2>
                 <h3>
-                  <span id="city">Newport, Oregon, USA </span>   
-                  <button type="button" class="btn btn-light btn-sm" id="pin">📍</button>
+                  <span id="city">Newport</span>, <span id="country"> Oregon, USA </span>   
+                  <button type="button" class="btn btn-light btn-sm"  id="cityPin">📍</button>
                 </h3>
             <div class="row">
                 <div class="col-3">
-                      <ul class="sunrise">
-                        <li id="sunrise">Sunrise: _:__am</li>
-                        <li>First Light: _:__am</li>
-                        <li>Moonset: _:__pm</li>
+                      <ul class="sun">
+                        <li>Sunrise: <span id="sunrise"> _ </span></li>
+                        <li>Sunset: <span id="sunset"> _ </span></li>
                 </div>
                 <div class="col-6">
                       <img
@@ -79,10 +78,9 @@
                         class="img-fluid"/>
                 </div>
                 <div class="col-3">
-                      <ul class="sunset">
-                        <li id="sunset">Sunset: _:__am</li>
-                        <li>Last Light: _:__am</li>
-                        <li>Moonrise: _:__am</li>
+                      <ul class="variables">
+                        <li>Wind: <span id="wind"> _ </span> kph</li>
+                        <li>Humidity: <span id="humidity"> _ </span> % </li>
                 </div>
             </div>  
             <h5>FORECAST</H5>
@@ -151,7 +149,7 @@
             </div>
         </div>
     </div>
-    <footer> coded by A.Andersson</footer>
+    <footer> <a href="https://64d410723072a0155ad9b5c2--lustrous-stardust-e30197.netlify.app/">Open source code </a>by A.Andersson</footer>
     <script src='src/index.js'></script>
   </body>
 </html>
