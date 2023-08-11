@@ -58,6 +58,7 @@ function getCurrentLocation(event) {
 
 //
 function displayWeatherConditions(response) {
+  let iconElement=document.querySelector("#icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#country").innerHTML = response.data.sys.country;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -71,15 +72,15 @@ function displayWeatherConditions(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
-
-  console.log(response.data);
-
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
   document.querySelector("#sunset").innerHTML = response.data.sys.sunset;
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn${response.data.weather[0].icon}@2x.png`);
+  
+  console.log(response.data);
 }
 
 function citySearch(event) {
