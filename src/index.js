@@ -58,15 +58,14 @@ function getCurrentLocation(event) {
 
 //
 function displayWeatherConditions(response) {
-  let iconElement=document.querySelector("#icon");
+  let iconElement = document.querySelector("#icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#country").innerHTML = response.data.sys.country;
 
   celsiusTemperature = response.data.main.temp;
- 
-  document.querySelector("#temperature").innerHTML = Math.round(
-    celsiusTemperature
-  );
+
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector("#maxTemp").innerHTML = Math.round(
     response.data.main.temp_max
   );
@@ -81,8 +80,11 @@ function displayWeatherConditions(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
   document.querySelector("#sunset").innerHTML = response.data.sys.sunset;
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn${response.data.weather[0].icon}@2x.png`);
-  
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   console.log(response.data);
 }
 
@@ -102,7 +104,7 @@ searchForm.addEventListener("submit", citySearch);
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9)/5 + 32;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 
   celsiusLink.classList.remove("active");
