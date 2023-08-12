@@ -26,7 +26,7 @@
                       <form class="search-form" id="search-form">
                         <div class="row">
                           <div class="col-6">
-                            <input type="text" placeholder=" Enter location" class="form-control" id="city-search" autofocus="on"/>
+                            <input type="text" placeholder=" Enter location" class="form-control" id="city-search" autofocus="on" autocomplete="off"/>
                           </div>
                           <div class="col-2">
                             <input type="submit" value="🔍" class="form-control btn btn-light shadow-sm" /> 
@@ -51,11 +51,10 @@
               <div class="clearfix">    
                 <h1 class="currentTemp">
                   <img src="" id="icon" /><span id="temperature">65</span><span class="temperatureUnits">
-                    <a href= "#" id="celsius-link">°C </a> ⎹ 
+                    <a href= "#" id="celsius-link" class="active">°C </a> ⎹ 
                     <a href= "#" id="fahrenheit-link"> °F </a>
                   </span>
                 </h1>
-                  
                 <h2> 
                   <span id="description"> Cloudy</span> <br>
                   <span id="maxTemp">High</span>°/
