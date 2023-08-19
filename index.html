@@ -13,143 +13,191 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="images/Newport.jpg" />
     <link rel="stylesheet" href="src/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Narnoor&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Narnoor&display=swap"
+      rel="stylesheet"
+    />
     <title>weather app draft</title>
   </head>
   <body>
     <div class="container">
-        <div class="weather-app">
-            <div class="row">
-                <div class="col-9">
-                      <form class="search-form" id="search-form">
-                        <div class="row">
-                          <div class="col-6">
-                            <input type="text" placeholder=" Enter location" class="form-control" id="city-search" autofocus="on" autocomplete="off"/>
-                          </div>
-                          <div class="col-2">
-                            <input type="submit" value="🔍" class="form-control btn btn-light shadow-sm" /> 
-                          </div>
-                          <div class="col-1">
-                            <button type="button" class="btn btn-light" id="homePin">◉</button>
-                          </div>
-                        </div>
-                      </form>
-                      <h4> CURRENT CONDITIONS </h4> 
-                      <div class=currentDate><strong>Sunday, July 23 20:43</strong></div>
-                </div>
-                <div class="col-3">
-                    <ul class="menu">
-                        <li><a href="https://www.google.com/search?q=newport%2C+oregon+daily+news&biw=1792&bih=1041&tbm=nws&sxsrf=AB5stBjEJa-II_EPBqBE94LQzwRCk5hGOQ%3A1688957393206&ei=0XGrZLGYDJLg0PEPhM6oqAU&ved=0ahUKEwjxxNnLkIOAAxUSMDQIHQQnClUQ4dUDCA0&uact=5&oq=newport%2C+oregon+daily+news&gs_lcp=Cgxnd3Mtd2l6LW5ld3MQAzIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIICAAQigUQhgMyCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgM6BQghEKABOgUIIRCrAjoFCAAQgAQ6CAgAEBYQHhAPOggIIRAWEB4QHVCiRFjzS2DRTGgBcAB4AIABXIgBlAaSAQIxMZgBAKABAcABAQ&sclient=gws-wiz-newsLocal News" target="_blank">Local News</a></li>
-                        <li><a href="https://weather.com/weather/radar/interactive/l/bff7ba7081d02998d46a0442f21ba72fc19d22394df71699df4d3e92f8447475" target="_blank"> Radar</a></li>
-                        <li>Weather Alerts</li>
-                    </ul>
-                </div>
-            </div>
-            <hr> 
-              <div class="clearfix">    
-                <h1 class="currentTemp">
-                  <img src="" id="icon" /><span id="temperature">65</span><span class="temperatureUnits">
-                    <a href= "#" id="celsius-link" class="active">°C </a> ⎹ 
-                    <a href= "#" id="fahrenheit-link"> °F </a>
-                  </span>
-                </h1>
-                <h2> 
-                  <span id="description"> Cloudy</span> <br>
-                  <span id="maxTemp">High</span>°/
-                  <span id="minTemp">Low</span>°
-                </h2>
-                <h3>
-                  <span id="city">Newport</span>, <span id="country"> Oregon, USA </span>   
-                  <button type="button" class="btn btn-light btn-sm"  id="cityPin">📍</button>
-                </h3>
-                </div>
-            <div class="row">
-                <div class="col-3">
-                      <ul class="sun">
-                        <li>Sunrise: <span id="sunrise"> _ </span></li>
-                        <li>Sunset: <span id="sunset"> _ </span></li>
-                </div>
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-9">
+            <form class="search-form" id="search-form">
+              <div class="row">
                 <div class="col-6">
-                      <img
-                        src="images/Newport.jpg"
-                        alt="photo of location"
-                        class="img-fluid"/>
+                  <input
+                    type="text"
+                    placeholder=" Enter location"
+                    class="form-control"
+                    id="city-search"
+                    autofocus="on"
+                    autocomplete="off"
+                  />
                 </div>
-                <div class="col-3">
-                      <ul class="variables">
-                        <li>Wind: <span id="wind"> _ </span> kph</li>
-                        <li>Humidity: <span id="humidity"> _ </span> % </li>
+                <div class="col-2">
+                  <input
+                    type="submit"
+                    value="🔍"
+                    class="form-control btn btn-light shadow-sm"
+                  />
                 </div>
-            </div>  
-            <h5>FORECAST</H5>
-            <hr>
-            <div class="row"> 
-                <div class="col g-0">
-                        <div class="card">
-                          <div class="card-body-days">
-                            <h6 class="card-title">Sun</h5>
-                            <p class="card-icon"> ⛅️ / 🌙</p>
-                            <p class="card-temp">60°/52°</p>
-                            <p class="precip">💧 24%</p>
-                          </div>
-                        </div>
-                </div>                        
-                <div class="col g-0">
-                        <div class="card">
-                          <div class="card-body-days">
-                            <h6 class="card-title">Mon</h5>
-                            <p class="card-icon"> ⛅️ / ☁️</p>
-                            <p class="card-temp">60°/49°</p>
-                            <p class="precip">💧 24%</p>
-                          </div>
-                        </div>
+                <div class="col-1">
+                  <button type="button" class="btn btn-light" id="homePin">
+                    ◉
+                  </button>
                 </div>
-                <div class="col g-0">
-                        <div class="card">
-                          <div class="card-body-days">
-                            <h6 class="card-title">Tue</h5>
-                            <p class="card-icon"> ⛅️ / ☁️</p>
-                            <p class="card-temp">60°/51°</p>
-                            <p class="precip">💧 8%</p>
-                          </div>
-                        </div>
-                </div>
-                <div class="col g-0">
-                        <div class="card">
-                          <div class="card-body-days">
-                            <h6 class="card-title">Wed</h5>
-                            <p class="card-icon"> ⛅️ / ☁️</p>
-                            <p class="card-temp">60°/50°</p>
-                            <p class="precip">💧 8%</p>
-                          </div>
-                        </div>
-                </div>
-                <div class="col g-0">
-                        <div class="card">
-                          <div class="card-body-days">
-                            <h6 class="card-title">Thu</h5>
-                            <p class="card-icon"> ⛅️ / 🌙</p>
-                            <p class="card-temp">62°/49°</p>
-                            <p class="precip">💧 7%</p>
-                          </div>
-                        </div>
-                </div>
-                <div class="col g-0">
-                        <div class="card">
-                          <div class="card-body-days">
-                            <h6 class="card-title">Fri</h5>
-                            <p class="card-icon"> 🌤️ / ☁</p>
-                            <p class="card-temp">62°/49°</p>
-                            <p class="precip">💧 7%</p>
-                          </div>
-                        </div>
-                </div>                          
+              </div>
+            </form>
+            <h4>CURRENT CONDITIONS</h4>
+            <div class="currentDate">
+              <strong>Sunday, July 23 20:43</strong>
             </div>
+          </div>
+          <div class="col-3">
+            <ul class="menu">
+              <li>
+                <a
+                  href="https://www.google.com/search?q=newport%2C+oregon+daily+news&biw=1792&bih=1041&tbm=nws&sxsrf=AB5stBjEJa-II_EPBqBE94LQzwRCk5hGOQ%3A1688957393206&ei=0XGrZLGYDJLg0PEPhM6oqAU&ved=0ahUKEwjxxNnLkIOAAxUSMDQIHQQnClUQ4dUDCA0&uact=5&oq=newport%2C+oregon+daily+news&gs_lcp=Cgxnd3Mtd2l6LW5ld3MQAzIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIICAAQigUQhgMyCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgM6BQghEKABOgUIIRCrAjoFCAAQgAQ6CAgAEBYQHhAPOggIIRAWEB4QHVCiRFjzS2DRTGgBcAB4AIABXIgBlAaSAQIxMZgBAKABAcABAQ&sclient=gws-wiz-newsLocal News"
+                  target="_blank"
+                  >Local News</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://weather.com/weather/radar/interactive/l/bff7ba7081d02998d46a0442f21ba72fc19d22394df71699df4d3e92f8447475"
+                  target="_blank"
+                >
+                  Radar</a
+                >
+              </li>
+              <li>Weather Alerts</li>
+            </ul>
+          </div>
         </div>
+        <hr />
+        <div class="clearfix">
+          <h1 class="currentTemp">
+            <img src="" id="icon" /><span id="temperature">65</span
+            ><span class="temperatureUnits">
+              <a href="#" id="celsius-link" class="active">°C </a> ⎹
+              <a href="#" id="fahrenheit-link"> °F </a>
+            </span>
+          </h1>
+          <h2>
+            <span id="description"> Cloudy</span> <br />
+            <span id="maxTemp">High</span>°/ <span id="minTemp">Low</span>°
+          </h2>
+          <h3>
+            <span id="city">Newport</span>,
+            <span id="country"> Oregon, USA </span>
+            <button type="button" class="btn btn-light btn-sm" id="cityPin">
+              📍
+            </button>
+          </h3>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <ul class="sun">
+              <li>Sunrise: <span id="sunrise"> _ </span></li>
+              <li>Sunset: <span id="sunset"> _ </span></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <img
+              src="images/Newport.jpg"
+              alt="photo of location"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-3">
+            <ul class="variables">
+              <li>Wind: <span id="wind"> _ </span> kph</li>
+              <li>Humidity: <span id="humidity"> _ </span> %</li>
+            </ul>
+          </div>
+        </div>
+        <h5>FORECAST</h5>
+        <hr />
+        <div class="weatherForecast">
+          <div class="row">
+            <div class="col g-0">
+              <div class="card">
+                <div class="card-body-days">
+                  <h6 class="card-title" id="weather-forecast-day">Sun</h6>
+                  <img src="" alt="" width="42" />
+                  <div class="forecast-temps">
+                    <span class="forecast-temp-max">60°</span>/<span
+                      class="forecast-temp-min"
+                      >52°</span
+                    >
+                    <p class="forecast-precip">💧 24%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col g-0">
+              <div class="card">
+                <div class="card-body-days">
+                  <h6 class="card-title">Mon</h6>
+                  <p class="card-icon"> ⛅️ / ☁️</p>
+                  <p class="card-temp">60°/49°</p>
+                  <p class="precip">💧 24%</p>
+                </div>
+              </div>
+            </div>
+            <div class="col g-0">
+              <div class="card">
+                <div class="card-body-days">
+                  <h6 class="card-title">Tue</h6>
+                  <p class="card-icon"> ⛅️ / ☁️</p>
+                  <p class="card-temp">60°/51°</p>
+                  <p class="precip">💧 8%</p>
+                </div>
+              </div>
+            </div>
+            <div class="col g-0">
+              <div class="card">
+                <div class="card-body-days">
+                  <h6 class="card-title">Wed</h6>
+                  <p class="card-icon"> ⛅️ / ☁️</p>
+                  <p class="card-temp">60°/50°</p>
+                  <p class="precip">💧 8%</p>
+                </div>
+              </div>
+            </div>
+            <div class="col g-0">
+              <div class="card">
+                <div class="card-body-days">
+                  <h6 class="card-title">Thu</h6>
+                  <p class="card-icon"> ⛅️ / 🌙</p>
+                  <p class="card-temp">62°/49°</p>
+                  <p class="precip">💧 7%</p>
+                </div>
+              </div>
+            </div>
+            <div class="col g-0">
+              <div class="card">
+                <div class="card-body-days">
+                  <h6 class="card-title">Fri</h6>
+                  <p class="card-icon"> 🌤️ / ☁</p>
+                  <p class="card-temp">62°/49°</p>
+                  <p class="precip">💧 7%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <footer> <a href="https://github.com/AAnders39/vanilla-weather-app.git">Open source code </a>by A.Andersson</footer>
-    <script src='src/index.js'></script>
+    <footer>
+      <a href="https://github.com/AAnders39/vanilla-weather-app.git"
+        >Open source code </a
+      >by A.Andersson
+    </footer>
+    <script src="src/index.js"></script>
   </body>
 </html>

@@ -54,10 +54,14 @@ h3 {
   padding-bottom: 20px;
 }
 
-.currentTemp .active {color: black; cursor: default;
+.currentTemp .active {
+  color: black;
+  cursor: default;
 }
 
-.weather-temperature .active:hover {text-decoration: none;}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
 
 .description {
   text-transform: capitalize;
