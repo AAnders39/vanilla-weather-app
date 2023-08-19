@@ -55,6 +55,30 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchPosition);
 }
+//
+
+function displayForecast() {
+  let forecastElement = document.querySelector("forecast");
+
+  let days = ["Sat", "Sun", "Mon", "Tue"];
+
+  days.forEach(function (day) {
+    let forecastHTML = `<div class="row">`;
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2">
+            <div class="weather-forecast-day" id="weather-forecast-date">${day}</div>
+            <img src="" alt="" width="42" />
+            <div class="forecast-temps">
+                  <span class="forecast-temp-max">60°</span>/<span class="forecast-temp-min">52°</span>
+                  <p class="forecast-precip">💧 24%</p>
+            </div>
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
 
 //
 function displayWeatherConditions(response) {
