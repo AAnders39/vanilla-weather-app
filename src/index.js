@@ -57,21 +57,24 @@ function getCurrentLocation(event) {
 }
 //
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Sat", "Sun", "Mon", "Tue"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       ` <div class="col-2">
-            <div class="weather-forecast-day" id="weather-forecast-date">${day}</div>
-            <img src="" alt="" width="42" />
+            <div class="weather-forecast-day" id="weather-forecast-date">${forecastDay.dt}</div>
+            <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+            alt="" 
+            width="42" />
             <div class="forecast-temps">
-                  <span class="forecast-temp-max">60°</span>/<span class="forecast-temp-min">52°</span>
-                  <p class="forecast-precip">💧 24%</p>
+                  <span class="forecast-temp-max">${forecastDay.temp.max}°</span>/<span class="forecast-temp-min">${forecastDay.temp.min}°</span>
+                  <p class="forecast-precip">rain</p>
             </div>
         </div>`;
   });
@@ -109,8 +112,6 @@ function displayWeatherConditions(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  console.log(response.data);
 }
 
 function citySearch(event) {
