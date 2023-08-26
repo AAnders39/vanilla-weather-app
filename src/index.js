@@ -58,12 +58,12 @@ function getCurrentLocation(event) {
 //
 
 function displayForecast() {
-  let forecastElement = document.querySelector("forecast");
+  let forecastElement = document.querySelector("#forecast");
 
   let days = ["Sat", "Sun", "Mon", "Tue"];
 
+  let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
-    let forecastHTML = `<div class="row">`;
     forecastHTML =
       forecastHTML +
       ` <div class="col-2">
@@ -79,6 +79,7 @@ function displayForecast() {
 
   forecastElement.innerHTML = forecastHTML;
 }
+displayForecast();
 
 //
 function displayWeatherConditions(response) {
