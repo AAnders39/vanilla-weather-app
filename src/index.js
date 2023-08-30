@@ -70,10 +70,11 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      ` <div class="col-2">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col-2">
             <div class="weather-forecast-day" id="weather-forecast-date">${formatDay(
               forecastDay.dt
             )}</div>
@@ -83,14 +84,15 @@ function displayForecast(response) {
             alt="" 
             width="42" />
             <div class="forecast-temps">
-                  <span class="forecast-temp-max">${
+                  <span class="forecast-temp-max">${Math.round(
                     forecastDay.temp.max
-                  }°</span>/<span class="forecast-temp-min">${
-        forecastDay.temp.min
-      }°</span>
+                  )}°</span>/<span class="forecast-temp-min">${Math.round(
+          forecastDay.temp.min
+        )}°</span>
                   <p class="forecast-precip">rain</p>
             </div>
         </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
 
@@ -138,7 +140,7 @@ function displayWeatherConditions(response) {
 
 function citySearch(event) {
   event.preventDefault();
-  let apiKey = `89d5c75b01ad14d48730b8ddfc9ae984`;
+  let apiKey = `eb9542c65e739e0fb25ade97c749e2aa`;
   let city = document.querySelector(`#city-search`).value;
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
