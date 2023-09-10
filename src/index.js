@@ -45,7 +45,7 @@ currentDate.innerHTML = `${day}, ${month} ${date} ${hours}:${minutes}`;
 function searchPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = `89d5c75b01ad14d48730b8ddfc9ae984`;
+  let apiKey = `eb9542c65e739e0fb25ade97c749e2aa`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayWeatherConditions);
@@ -89,7 +89,9 @@ function displayForecast(response) {
                   )}°</span>/<span class="forecast-temp-min">${Math.round(
           forecastDay.temp.min
         )}°</span>
-                  <p class="forecast-precip">rain</p>
+                  <p class="forecast-precip">${
+                    forecastDay.weather[0].description
+                  }</p>
             </div>
         </div>`;
     }
