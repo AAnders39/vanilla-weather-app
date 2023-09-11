@@ -46,7 +46,7 @@ function searchPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = `eb9542c65e739e0fb25ade97c749e2aa`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayWeatherConditions);
 }
@@ -61,6 +61,11 @@ function formatDay(timestamp) {
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
+}
+function formatTime(response) {
+  sunTimestamp = response.data.sys.sunrise;
+  let sunTime = new Date(sunTimestamp * 1000);
+  sun.innerHTML = "${hours}:${minutes}";
 }
 
 function displayForecast(response) {
@@ -131,6 +136,7 @@ function displayWeatherConditions(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
   document.querySelector("#sunset").innerHTML = response.data.sys.sunset;
+
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
