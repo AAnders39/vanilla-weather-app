@@ -2,13 +2,9 @@
   margin: 30px auto;
   padding: 15px;
   max-width: 600px;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(255, 200, 124) 20%,
-    rgb(252, 251, 121) 90%
-  );
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   font-family: "Narnoor", serif;
-  border: 10px solid #ffb32f;
+  border: 10px solid #ed7b5c;
   border-radius: 10px;
 }
 .search-form {
@@ -47,7 +43,7 @@ h1 {
 }
 h2 {
   color: black;
-  font-size: 15px;
+  font-size: 35px;
 }
 h3 {
   font-size: 20px;
@@ -66,9 +62,14 @@ h3 {
 .description {
   text-transform: capitalize;
 }
-.sun,
-.variables {
+.details {
   text-align: center;
+  background-color: #ace0f9;
+  border-color: #ed7b5c;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 10px;
+  padding: 15px;
 }
 .temperatureUnits {
   font-size: 16px;
@@ -76,14 +77,10 @@ h3 {
   position: relative;
   top: -40px;
 }
-.card-body-days {
+
+.weather-forecast {
   text-align: center;
-  background: linear-gradient(
-    87.4deg,
-    rgb(255, 241, 165) 1.9%,
-    rgb(200, 125, 76) 49.7%,
-    rgb(83, 54, 54) 100.5%
-  );
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   opacity: 0.9;
 }
 footer {

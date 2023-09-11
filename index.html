@@ -25,10 +25,10 @@
     <div class="container">
       <div class="weather-app">
         <div class="row">
-          <div class="col-9">
+          <div class="col-12">
             <form class="search-form" id="search-form">
               <div class="row">
-                <div class="col-6">
+                <div class="col-8">
                   <input
                     type="text"
                     placeholder=" Enter location"
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-1">
                   <button type="button" class="btn btn-light" id="homePin">
-                    ◉
+                    📍
                   </button>
                 </div>
               </div>
@@ -57,73 +57,47 @@
               <strong>Sunday, July 23 20:43</strong>
             </div>
           </div>
-          <div class="col-3">
-            <ul class="menu">
-              <li>
-                <a
-                  href="https://www.google.com/search?q=newport%2C+oregon+daily+news&biw=1792&bih=1041&tbm=nws&sxsrf=AB5stBjEJa-II_EPBqBE94LQzwRCk5hGOQ%3A1688957393206&ei=0XGrZLGYDJLg0PEPhM6oqAU&ved=0ahUKEwjxxNnLkIOAAxUSMDQIHQQnClUQ4dUDCA0&uact=5&oq=newport%2C+oregon+daily+news&gs_lcp=Cgxnd3Mtd2l6LW5ld3MQAzIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIICAAQigUQhgMyCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgM6BQghEKABOgUIIRCrAjoFCAAQgAQ6CAgAEBYQHhAPOggIIRAWEB4QHVCiRFjzS2DRTGgBcAB4AIABXIgBlAaSAQIxMZgBAKABAcABAQ&sclient=gws-wiz-newsLocal News"
-                  target="_blank"
-                  >Local News</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://weather.com/weather/radar/interactive/l/bff7ba7081d02998d46a0442f21ba72fc19d22394df71699df4d3e92f8447475"
-                  target="_blank"
-                >
-                  Radar</a
-                >
-              </li>
-              <li>Weather Alerts</li>
-            </ul>
-          </div>
         </div>
         <hr />
-        <div class="clearfix">
-          <h1 class="currentTemp">
-            <img src="" id="icon" /><span id="temperature">65</span
-            ><span class="temperatureUnits">
-              <a href="#" id="celsius-link" class="active">°C </a> ⎹
-              <a href="#" id="fahrenheit-link"> °F </a>
-            </span>
-          </h1>
-          <h2>
-            <span id="description"> Cloudy</span> <br />
-            <span id="maxTemp">High</span>°/ <span id="minTemp">Low</span>°
-          </h2>
-          <h3>
-            <span id="city">Newport</span>,
-            <span id="country"> Oregon, USA </span>
-            <button type="button" class="btn btn-light btn-sm" id="cityPin">
-              📍
-            </button>
-          </h3>
-        </div>
         <div class="row">
-          <div class="col-3">
-            <ul class="sun">
-              <li>Sunrise: <span id="sunrise">  05:43 </span></li>
-              <li>Sunset: <span id="sunset"> 20:43</span></li>
-            </ul>
+          <div class="col-7">
+            <h1 class="currentTemp">
+              <img src="" id="icon" /><span id="temperature">55</span
+              ><span class="temperatureUnits">
+                <a href="#" id="celsius-link" class="active">°C </a> ⎹
+                <a href="#" id="fahrenheit-link"> °F </a>
+              </span>
+            </h1>
+            <h2>
+              <span id="description"> </span> <br />
+              <span id="maxTemp">High</span>°/ <span id="minTemp">Low</span>°
+            </h2>
+            <h3>
+              <span id="city">Newport</span>,
+              <span id="country"> US </span>
+            </h3>
           </div>
-          <div class="col-6">
-            <img
-              src="images/Newport.jpg"
-              alt="photo of location"
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-3">
-            <ul class="variables">
-              <li>Wind: <span id="wind"> _ </span> kph</li>
-              <li>Humidity: <span id="humidity"> _ </span> %</li>
-            </ul>
+          <div class="col-5">
+            <br />
+            <div class="details">
+              <ul class="variables">
+                <li>Wind: <span id="wind"> _ </span> kph</li>
+                <hr />
+                <li>Humidity: <span id="humidity"> _ </span> %</li>
+              </ul>
+              <hr />
+              <ul class="sun">
+                <li>Sunrise: <span id="sunrise"> 05:43 </span></li>
+                <hr />
+                <li>Sunset: <span id="sunset"> 20:43</span></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <h5>FORECAST</h5>
+        <h5>WEATHER FORECAST</h5>
         <hr />
-        <div class="weather-forecast" id="forecast">  
-        </div>
+        <div class="weather-forecast" id="forecast"></div>
+      </div>
     </div>
     <footer>
       <a href="https://github.com/AAnders39/vanilla-weather-app.git"
