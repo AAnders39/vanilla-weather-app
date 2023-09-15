@@ -55,17 +55,13 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchPosition);
 }
+
 //
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
-}
-function formatTime(response) {
-  sunTimestamp = response.data.sys.sunrise;
-  let sunTime = new Date(sunTimestamp * 1000);
-  sun.innerHTML = "${hours}:${minutes}";
 }
 
 function displayForecast(response) {
@@ -188,3 +184,21 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 //
 let currentLocationButton = document.querySelector("#homePin");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+//
+function formatSun(timestamp) {
+  let apiKey = `eb9542c65e739e0fb25ade97c749e2aa`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayWeatherConditions);
+  let date = new Date(timestamp * 1000);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
